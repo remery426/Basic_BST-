@@ -109,6 +109,19 @@ namespace ConsoleApplication
             }
             return 1 + Math.Max(height(my_node.left),height(my_node.right));
         }
+        public void inorder_traversal(){
+            traverse(this.Root);
+        }
+        public void traverse(Node my_node){
+            if(my_node == null){
+                return;
+            }
+            traverse(my_node.left);
+            Console.WriteLine(my_node.val);
+            traverse(my_node.right);
+
+        }
+   
         }
         
         
@@ -125,13 +138,12 @@ namespace ConsoleApplication
             my_bst.Add(5);
             my_bst.Add(6);
             my_bst.Add(9);
-            
+    
             if(my_bst.is_valid_call()){
                 Console.WriteLine("yeeehawwww!");
             };
-            Console.WriteLine(my_bst.sizehelper());
-            Console.WriteLine(my_bst.min());
-            Console.WriteLine(my_bst.height_help());
+
+            my_bst.inorder_traversal();
 
     }
 }
